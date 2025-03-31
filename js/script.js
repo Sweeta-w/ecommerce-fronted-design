@@ -88,7 +88,30 @@ document.getElementById('show-more-btun').addEventListener('click', function() {
                 <i class="fa-regular fa-heart"></i>
             </button>
             `;
+            div.addEventListener("click", function () {
+              localStorage.setItem("selectedProduct", JSON.stringify(prod));
+              window.location.href = "pd.html";
+          });
             pcontainer.appendChild(div);
+  });
+});
+// Select all existing product cards on the page
+document.querySelectorAll(".product-card").forEach(card => {
+  card.addEventListener("click", function () {
+      let prodName = this.querySelector(".p-name").textContent; // Get product name
+      let prodPrice = this.querySelector(".price strong").textContent;
+      let prodImage = this.querySelector(".product-image").src;
+
+      // Create a product object
+      let productData = {
+          name: prodName,
+          price: prodPrice,
+          image: prodImage
+      };
+
+      // Store in localStorage
+      localStorage.setItem("selectedProduct", JSON.stringify(productData));
+      window.location.href = "pd.html"; // Redirect
   });
 });
 
