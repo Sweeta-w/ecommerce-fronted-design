@@ -920,6 +920,46 @@ input[type="checkbox"]:checked::before {
 .p_ic {
   cursor: pointer;
 }
+.noUi-target {
+  background: #e5e7eb; /* Tailwind gray-200 */
+  border-radius: 9999px;
+  height: 6px;
+  border: none;
+}
+
+/* The selected range (blue fill) */
+.noUi-connect {
+  background: #3b82f6 !important; /* Tailwind blue-500 */
+}
+
+/* Handle thumbs */
+.noUi-handle {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: white;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  top: -6px; /* vertically center */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.noUi-handle:hover {
+  transform: scale(1.1);
+  border-color: #0d6efd; /* blue-600 on hover */
+}
+
+/* Tooltip styles (optional) */
+.noUi-tooltip {
+  background: white;
+  color: #111827; /* Tailwind gray-900 */
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
 
 /* Product listing content */
 .prod-bar {
@@ -1610,10 +1650,7 @@ input[type="checkbox"]:checked::before {
     display: grid;
     grid-template-columns: 1.5fr repeat(5, 1fr);
   }
-  .offer {
-
-  }
-
+  
 }
 @media (max-width: 768px) {
   .bottom-nav {

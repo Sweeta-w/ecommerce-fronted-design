@@ -115,3 +115,40 @@ document.querySelectorAll(".product-card").forEach(card => {
   });
 });
 
+const priceSlider = document.getElementById('price-slider');
+  const minPrice = document.getElementById('minPrice');
+  const maxPrice = document.getElementById('maxPrice');
+
+  noUiSlider.create(priceSlider, {
+    start: [0, 10000],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 10000
+    },
+    step: 100,
+    tooltips: true,
+    format: {
+      to: value => Math.round(value),
+      from: value => parseInt(value)
+    }
+  });
+
+  // Update inputs when slider moves
+  priceSlider.noUiSlider.on('update', (values, handle) => {
+    if (handle === 0) {
+      minPrice.value = values[0];
+    } else {
+      maxPrice.value = values[1];
+    }
+  });
+
+  // Update slider when inputs change
+  minPrice.addEventListener('change', () => {
+    priceSlider.noUiSlider.set([minPrice.value, null]);
+  });
+
+  maxPrice.addEventListener('change', () => {
+    priceSlider.noUiSlider.set([null, maxPrice.value]);
+  });
+
