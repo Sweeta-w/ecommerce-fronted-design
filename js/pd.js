@@ -92,3 +92,26 @@ document.addEventListener("DOMContentLoaded", function () {
         displayReviews(); // Refresh reviews
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let addToCartButton = document.querySelector(".add-to-cart");
+
+    addToCartButton.addEventListener("click", function () {
+        let product = {
+            name: document.getElementById("product-name").textContent.trim(),
+            price: document.getElementById("product-price").textContent.trim(),
+            image: document.getElementById("product-image").src.trim()
+        };
+
+        // Check if cart exists, if not create an empty array
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Add new product to cart
+        cart.push(product);
+
+        // Save updated cart back to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("✅ Product added to cart!");
+    });
+});

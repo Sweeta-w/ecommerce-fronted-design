@@ -119,7 +119,7 @@ ul li {
 footer {
   width: 100%;
   background-color: #fff;
-  padding: 42px;
+  padding: 16px;
 }
 
 /* bottom nav design */
@@ -262,7 +262,7 @@ footer {
 
 /* Main Section design */
 .main-container {
-  width: 86%;
+  width: 88%;
   margin: 0 auto;
 
 
@@ -275,6 +275,7 @@ footer {
 }
 
 .main-sec {
+  height: 100%;
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 2.5fr .75fr;
@@ -471,6 +472,7 @@ footer {
   gap: 8px;
   font-size: .78rem;
   margin-top: 8px;
+  overflow: hidden;
 
 }
 
@@ -480,6 +482,7 @@ footer {
   color: #fff;
   text-align: center;
   border-radius: 5px;
+  align-items: center;
 }
 
 .time-left h2 {
@@ -1430,11 +1433,144 @@ input[type="checkbox"]:checked::before {
   display: inline;
 }
 
+/* Cart page design */
+.cart-total {
+  display: flex;
+  gap: 16px;
+  margin: 0 8px;
+}
+.cart-section {
+  padding: 16px;
+  background-color: #fff;
+  width: 70%;
+}
+.coupen-card {
+  padding: 18px;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+.add-coupen {
+  display: flex;
+  margin: 8px 0;
+  border: 1px solid #8B96A5;
+  border-radius: 5px;
+}
+.add-coupen input{
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+.add-coupen p {
+  padding: 8px 16px;
+  color: #0047FF;
+  font-weight: 600;
+  border-left: 1px solid #8B96A5;
+}
+.sdt {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+
+}
+#dis-red {
+  color: red;
+}
+#tax-green {
+  color: green;
+}
+#x-large {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.checkout {
+  background-color: green;
+  width: 100%;
+  padding: 16px;
+  color: #fff;
+  border-radius: 8px;
+}
+#bord {
+  width: 100%;
+  border: 1px solid #7a7d82;
+  margin: 16px 0;
+}
+.payment-cards {
+  display: grid;
+  margin: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.cart-buttons {
+  border-top: 1px solid #8B96A5;
+  margin-top: 10px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.back-shop {
+  background-color: #0073F7;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+#remove {
+  padding: 6px;
+  border: 1px solid #8B96A5;
+  color: #0073F7;
+  border-radius: 5px;
+  font-weight: 550;
+}
+
+
+.cart-head {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 16px;
+}
+
+.cart-item {
+ 
+  border-bottom: 1px solid #8B96A5;
+  padding: 8px;
+}
+.cart-item:last-child {
+  border-bottom: none;
+}
+.cart-p {
+  font-size: .85rem;
+  color: #8B96A5;
+}
+.cart-info{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.cart-img {
+  display: flex;
+  gap: 10px;
+}
+
+
+.cart-price {
+  font-weight: 600;
+  font-size: .9rem;
+}
+.remove-item {
+  color: red;
+  padding: 2px 8px;
+  border: 1px solid #8B96A5;
+  border-radius: 5px;
+  margin-left: 72px;
+  margin-top: 8px;
+}
 
 
 
 
-@media (max-width: 990px) {
+@media (max-width: 980px) {
   .rating {
       flex-wrap: nowrap;
       font-size: 12px; /* Reduce size to fit in one line */
@@ -1442,15 +1578,6 @@ input[type="checkbox"]:checked::before {
 
   .stars .fa-star {
       font-size: 10px; /* Reduce star size */
-  }
-  .column h3, .column p, .f-chg {
-    font-size: .62rem !important;
-  }
-  .social h3 {
-    font-size: .35rem;
-  }
-  .social p {
-    font-size: .1rem;
   }
   
   .side-nav ul {
@@ -1472,5 +1599,42 @@ input[type="checkbox"]:checked::before {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+  .service {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .deals {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(5, 1fr);
+  }
+  .offer {
 
+  }
+
+}
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+  .service {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .nav-icons {
+    display: none;
+  }
+  .inputCat select{
+    display: none;
+  }
+  .nav {
+    justify-content: space-around;
+    margin: 18px;
+  }
+  
 }
